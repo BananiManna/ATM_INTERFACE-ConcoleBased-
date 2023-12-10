@@ -53,7 +53,6 @@ class BankAccount {
             System.out.println("4. Check Balance");
             System.out.println("5. Transaction History");
             System.out.println("6. Exit");
-
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); 
@@ -94,7 +93,6 @@ class BankAccount {
             System.out.println("Invalid amount or insufficient balance!");
         }
     }
-
     private void deposit(Scanner scanner) {
         System.out.print("Enter amount to deposit: ");
         float amount = scanner.nextFloat();
@@ -108,16 +106,13 @@ class BankAccount {
             System.out.println("Invalid amount or exceeding limit!");
         }
     }
-
     private void transfer(Scanner scanner) {
         System.out.print("Enter recipient's name: ");
         String recipient = scanner.nextLine();
         System.out.print("Enter recipents bank account no: ");
         int Raccount = scanner.nextInt();
         System.out.print("Enter amount to transfer: ");
-        float amount = scanner.nextFloat();
-        
-
+        float amount = scanner.nextFloat();    
         if (amount > 0 && amount <= 50000f && amount <= balance) {
             transactions++;
             balance -= amount;
@@ -139,7 +134,6 @@ public class ATM {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         BankAccount bankAccount = new BankAccount();
-
         System.out.println("------------Welcome to the ATM System----------");
         bankAccount.register(scanner);
     }
